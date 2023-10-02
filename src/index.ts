@@ -1,5 +1,4 @@
-import { Elysia } from "elysia";
-import RepositorioUsuarioMemoria from "./external/memoria/RepositorioUsuarioMemoria";
+import app from './external/api/config'
 import RegistrarUsuario from "./core/usuario/service/RegistrarUsuario";
 import RegistrarUsuarioController from "./adapters/RegistrarUsuarioController";
 import RepositorioUsuarioPrismaPg from "../prisma/RepositorioUsuarioPrismaPg";
@@ -8,7 +7,6 @@ import ConsultarUsuariosController from "./adapters/ConsultarUsuariosController"
 import ConsultarUsuarioPorId from "./core/usuario/service/ConsultarUsuarioPorId";
 import ConsultarUsuarioPorIdController from "./adapters/ConsultarUsuarioPorIdController";
 
-const app = new Elysia()
 
 const repositorioUsuario = new RepositorioUsuarioPrismaPg();
 // Registrar rotas 
