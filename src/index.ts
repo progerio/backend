@@ -5,6 +5,8 @@ import RegistrarUsuarioController from "./adapters/RegistrarUsuarioController";
 import RepositorioUsuarioPrismaPg from "../prisma/RepositorioUsuarioPrismaPg";
 import ConsultarUsuarios from "./core/usuario/service/ConsultarUsuarios";
 import ConsultarUsuariosController from "./adapters/ConsultarUsuariosController";
+import ConsultarUsuarioPorId from "./core/usuario/service/ConsultarUsuarioPorId";
+import ConsultarUsuarioPorIdController from "./adapters/ConsultarUsuarioPorIdController";
 
 const app = new Elysia()
 
@@ -18,6 +20,10 @@ new RegistrarUsuarioController(app, registrarUsuario)
 const consultarUsuarios = new ConsultarUsuarios(repositorioUsuario)
 
 new ConsultarUsuariosController(app, consultarUsuarios);
+
+const consultarUsuarioPorId = new ConsultarUsuarioPorId(repositorioUsuario);
+
+new ConsultarUsuarioPorIdController(app, consultarUsuarioPorId);
 
 app.listen(3000);
 
