@@ -8,5 +8,5 @@ export default interface RepositorioUsuario {
 
     consultarPorEmail(email: string): Promise<Usuario | null>
 
-    criar(usuario: Usuario): Promise<Usuario>
+    criar(usuario: Partial<Usuario>): Promise<Usuario>
 }
