@@ -5,9 +5,15 @@ export default class RepositorioUsuarioMemoria implements RepositorioUsuario {
 
     private readonly usuarios: Usuario[] = [];
 
+
     async consultarPorEmail(email: string): Promise<Usuario | null> {
         return this.usuarios.find(usuario => usuario.email == email) ?? null
     }
+
+    async consultarPorId(id: number): Promise<Usuario | null> {
+        return this.usuarios.find(usuario => usuario?.id == id) ?? null
+    }
+
     async criar(usuario: Usuario): Promise<Usuario> {
         const novoUsuario = { ...usuario, id: Math.random() }
 
