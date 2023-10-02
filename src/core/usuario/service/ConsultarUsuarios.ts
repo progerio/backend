@@ -6,8 +6,8 @@ export default class ConsultarUsuarios implements CasoDeUso<void, Usuario[]>{
 
     constructor(readonly repositorio: RepositorioUsuario) { }
 
-    async executar(): Promise<Usuario[]> {
-        return await this.repositorio.consultarTodos();
+    executar(): Promise<Usuario[]> {
+        return this.repositorio.consultarTodos();
     }
 
 }
