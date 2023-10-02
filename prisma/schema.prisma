@@ -16,5 +16,5 @@ model Usuario {
   email String @unique
   senha String 
   criadoEm DateTime @default(now())
-  atualizadoEm DateTime @updateAt
+  atualizadoEm DateTime @updatedAt
 }
