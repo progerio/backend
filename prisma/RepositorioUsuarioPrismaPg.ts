@@ -9,6 +9,10 @@ export default class RepositorioUsuarioPrismaPg implements RepositorioUsuario {
         this.prisma = new PrismaClient()
     }
 
+    consultarTodos(): Promise<Usuario[]> {
+        return this.prisma.usuario.findMany();
+    }
+
     consultarPorEmail(email: string): Promise<Usuario | null> {
         return this.prisma.usuario.findUnique({
             where: {

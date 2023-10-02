@@ -15,4 +15,8 @@ export default class RepositorioUsuarioMemoria implements RepositorioUsuario {
         return novoUsuario;
     }
 
+    async consultarTodos(): Promise<Usuario[]> {
+        return this.usuarios
+    }
+
 }
